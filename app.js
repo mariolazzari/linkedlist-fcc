@@ -22,3 +22,16 @@ const printList = head => {
 
 console.log("\nPrint list");
 printList(a);
+
+// print lidt recursively
+const printListRec = head => {
+  if (!head) {
+    return;
+  }
+
+  console.log(head.val);
+  printListRec(head.next);
+};
+
+console.log("Print list recursively:");
+printListRec(a);
