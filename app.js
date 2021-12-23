@@ -69,3 +69,17 @@ const linkedListValuesRec = head => {
 
 console.log("\nTraverse list recursie:");
 console.log(linkedListValuesRec(a));
+
+// sum list
+const sumList = head => {
+  let current = head;
+  let sum = "";
+
+  while (current) {
+    sum += current.val;
+    current = current.next;
+  }
+  return sum;
+};
+
+console.log("\nSum list:", sumList(a));
