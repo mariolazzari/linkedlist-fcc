@@ -83,3 +83,48 @@ const sumList = head => {
 };
 
 console.log("\nSum list:", sumList(a));
+
+// sum list recursively
+const sumListRec = head => {
+  if (!head) {
+    return "";
+  }
+
+  return head.val + sumListRec(head.next);
+};
+
+console.log("Sum list recursively:", sumListRec(a));
+
+// find a value in a list
+const findVal = (head, val) => {
+  let current = head;
+
+  while (current) {
+    if (current.val === val) {
+      return true;
+    }
+    current = current.next;
+  }
+  return false;
+};
+
+// find
+console.log("\nFind C:", findVal(a, "C"));
+console.log("Find G:", findVal(a, "G"));
+
+// find a value in a list (recursive)
+const findValRec = (head, val) => {
+  if (!head) {
+    return false;
+  }
+
+  if (head.val === val) {
+    return true;
+  }
+
+  return findValRec(head.next, val);
+};
+
+// find recursively
+console.log("\nFind C:", findVal(a, "C"));
+console.log("Find G:", findVal(a, "G"));
