@@ -128,3 +128,55 @@ const findValRec = (head, val) => {
 // find recursively
 console.log("\nFind C:", findVal(a, "C"));
 console.log("Find G:", findVal(a, "G"));
+
+// get index vaue
+const indexValue = (head, index) => {
+  let count = 0;
+  let current = head;
+
+  while (current) {
+    if (count === index) {
+      return current.val;
+    }
+    count++;
+    current = current.next;
+  }
+  return null;
+};
+
+// index value
+console.log("\nIndex 2 value:", indexValue(a, 2));
+console.log("Index 9 value:", indexValue(a, 9));
+
+// reverse list
+const reverseList = head => {
+  let current = head;
+  let prev = null;
+  let next = null;
+
+  while (current) {
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+
+  return prev;
+};
+
+console.log("\nReverse list");
+printList(reverseList(a));
+
+// reverse list recursively
+const reverseListRec = (head, prev = null) => {
+  if (!head) {
+    return prev;
+  }
+
+  const next = head.next;
+  head.next = prev;
+  return reverseListRec(next, head);
+};
+
+console.log("\nReverse list rec");
+printList(reverseListRec(d));
